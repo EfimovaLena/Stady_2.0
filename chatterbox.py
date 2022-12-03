@@ -35,12 +35,19 @@ def settings_of_input_and_output(function_for_work):
     def chto_to():
         try:
             output_way = input('Введите способ вывода: ')
+            input_way = input('Введите способ Ввода: ')
             # Перенаправляем потоки, если надо работать с файлами
             flag_for_output = False
             if output_way != 'keyboard':
                 flag_for_output = True
                 stdout_fileno = sys.stdout
                 sys.stdout = open(output_way, 'w')
+            flag_for_input = False
+            if input_way != 'keyboard':
+                flag_for_input = True
+                stdin_fileno = sys.stdin
+                sys.stdin = open(input_way, 'r')
+            
 
             function_for_work()
 
