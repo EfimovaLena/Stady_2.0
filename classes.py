@@ -131,7 +131,7 @@ class DNK(Nucleic_acids):
     def __str__(self):
         return str(self.sub1) + ', ' + str(self.sub2)
     def __add__(self, other):
-        return [str(self.sub1)+str(other.sub1), str(self.sub2)+str(other.sub2)]
+        return DNK([str(self.sub1)+str(other.sub1), str(self.sub2)+str(other.sub2)])
     def __len__(self):
         if len(self.sub1) == len(self.sub2):
             return len(self.sub2)
